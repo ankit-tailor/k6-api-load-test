@@ -1,0 +1,17 @@
+{
+  "name": "api-load-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@scure/bip39": "^1.5.4",
+    "crypto": "^1.0.1",
+    "k6": "^0.0.0",
+    "viem": "^2.22.10"
+  }
+}
