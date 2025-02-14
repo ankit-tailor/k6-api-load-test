@@ -1,7 +1,6 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
 import { SharedArray } from "k6/data";
-import { obj } from "./attested-address.js";
 
 export const options = {
   // Key configurations for Stress in this section
@@ -12,17 +11,9 @@ export const options = {
   ],
 };
 
-// const addresses = new SharedArray("addresses", function () {
-//   return JSON.parse(open("./addresses.json"));
-// });
-
 export default () => {
-  const attestedAddress = Object.values(obj);
-  const randomIndex = Math.floor(Math.random() * attestedAddress.length);
-  const address = attestedAddress[randomIndex];
-
   const urlRes = http.get(
-    "https://backend.blockscratch.xyz/api/get-user?recipientAddress=" + address
+    "https://jsonplaceholder.typicode.com/todos/1"
   );
   check(urlRes, {
     "status is 200": (r) => r.status === 200,
